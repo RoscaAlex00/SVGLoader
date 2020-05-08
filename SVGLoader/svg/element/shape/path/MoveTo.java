@@ -35,4 +35,7 @@ public class MoveTo extends PathOp {
 
         return false;
     }
+    public String toString(){
+        return "["+label+": x="+x+", y="+y+"]";
+    }
 }
