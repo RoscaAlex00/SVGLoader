@@ -37,5 +37,7 @@ public class Circle extends Shapes {
         }
         return false;
     }
-
+    public String toString(){
+        return label+": cx="+cx+", cy="+cy+", r="+r;
+    }
 }

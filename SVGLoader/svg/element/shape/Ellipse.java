@@ -43,4 +43,7 @@ public class Ellipse extends Shapes {
         }
         return true;
     }
+    public String toString(){
+        return label+": cx="+cx+", cy="+cy+", rx="+rx+", ry="+ry;
+    }
 }

@@ -55,4 +55,7 @@ public class Rect extends Shapes {
         }
         return true;
     }
+    public String toString(){
+        return label+": x="+x+", y="+y+", rx="+rx+", ry="+ry+", width="+width+", height="+height;
+    }
 }

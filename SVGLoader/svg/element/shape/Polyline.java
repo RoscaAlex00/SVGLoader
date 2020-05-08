@@ -30,4 +30,11 @@ public class Polyline extends Shapes {
         }
         return true;
     }
+    public String toString(){
+        String toReturn =  label+": ";
+        for(Point2D a:polyline){
+            toReturn+="("+a.getX()+","+a.getY()+") ";
+        }
+        return toReturn;
+    }
 }

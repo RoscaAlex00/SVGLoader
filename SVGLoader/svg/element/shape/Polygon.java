@@ -30,4 +30,11 @@ public class Polygon extends Polyline {
         }
         return true;
     }
+    public String toString(){
+        String toReturn =  label+": ";
+        for(Point2D a:polygon){
+            toReturn+="("+a.getX()+","+a.getY()+") ";
+        }
+        return toReturn;
+    }
 }
