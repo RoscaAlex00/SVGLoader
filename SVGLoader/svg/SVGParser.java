@@ -41,7 +41,7 @@ public class SVGParser
 	 * @throws IOException
 	 */
 	@SuppressWarnings("resource")
-	public void loadAndParse(final String name) throws IOException
+	public void loadAndParse(final String name) throws Exception
 	{
 		fileName = new String(name);
 	
@@ -50,11 +50,11 @@ public class SVGParser
 		reader = new BufferedReader(new FileReader(fileName));
 		
 		// Read its content into a string
-		String content = "";
+		StringBuilder content = new StringBuilder();
 		String line = reader.readLine();
 	    while (line != null) 
 	    {
-	    	content += line;
+	    	content.append(line);
 	    	line = reader.readLine();
 	    }
 	    reader.close();
@@ -62,7 +62,7 @@ public class SVGParser
 	    //System.out.println();
 
 	    // Parse the content
-	    parse(content);
+	    parse(content.toString());
 	}
 
 	//-------------------------------------------------------------------------
@@ -71,8 +71,7 @@ public class SVGParser
 	 * Load the specified SVG content from the file with the given name.
 	 * @param content
 	 */
-	public void parse(final String content)
-	{	
+	public void parse(final String content) throws Exception {
 		svg.clear();
 
 		// Load SVG elements
@@ -236,12 +235,9 @@ public class SVGParser
 	@Override
 	public String toString()
 	{
-		final StringBuilder sb = new StringBuilder();
-		
-		sb.append(fileName + " has ");
-		sb.append(svg);
-		
-		return sb.toString();
+
+		return fileName + " has " +
+				svg;
 	}
 
 	//-------------------------------------------------------------------------

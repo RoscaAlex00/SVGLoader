@@ -2,6 +2,7 @@ package svg.element;
 
 //-----------------------------------------------------------------------------
 
+
 /**
  * Base SVG element type.
  * @author cambolbro
@@ -48,7 +49,7 @@ public abstract class BaseElement implements Element
 
 	//-------------------------------------------------------------------------
 
-	public ElementFactory elementFactory() {
+	public static ElementFactory elementFactory() {
 		return new ElementFactory();
 	}
 }

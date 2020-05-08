@@ -1,5 +1,7 @@
 package svg.element.shape.path;
 
+import svg.SVGParser;
+import svg.element.Element;
 import svg.element.shape.path.PathOp;
 
 
@@ -14,16 +16,21 @@ public class MoveTo extends PathOp {
         super(label);
     }
 
+    @Override
+    public Element newInstance() {
+        return null;
+    }
+
     public boolean load(String expr) {
         if (expr.contains(" x=")) {
             final Double result = SVGParser.extractDouble(expr, " x=")[0];
             if (result != null)
-                x = result.doubleValue();
+                x = result;
         }
         if (expr.contains(" y=")) {
             final Double result = SVGParser.extractDouble(expr, " y=")[0];
             if (result != null)
-                y = result.doubleValue();
+                y = result;
         }
 
         return false;

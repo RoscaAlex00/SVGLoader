@@ -21,10 +21,9 @@ public class SVGLoader
 		final SVGParser parser = new SVGParser();
 	    final String fileName = "SVGLoader/test-1.svg";
 	
-	    try { parser.loadAndParse(fileName); } 
-		catch (IOException e) { e.printStackTrace(); }
-	    
-	    System.out.println(parser);
+	    try { parser.loadAndParse(fileName); } catch (Exception e) { e.printStackTrace(); }
+
+		System.out.println(parser);
 	}
 	
 	//-------------------------------------------------------------------------
