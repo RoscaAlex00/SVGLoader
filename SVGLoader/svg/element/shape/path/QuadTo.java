@@ -23,28 +23,29 @@ public class QuadTo extends PathOp {
     }
 
     public boolean load(String expr) {
-        if (expr.contains(" x1=")) {
-            final Double result = SVGParser.extractDouble(expr, " x1=")[0];
-            if (result != null)
-                x1 = result;
+        if (expr.contains("Q")) {
+            int start1 = expr.indexOf("Q") + 1;
+            int end1 = start1+expr.substring(start1).indexOf(" ");
+            int middle1 = start1+expr.substring(start1, end1).indexOf(",");
+            int start2 = end1 + 1;
+            int end2 = start2+expr.substring(start2).indexOf(" ");
+            int middle2 = start2+expr.substring(start2, end2).indexOf(",");
+            final Double result1 = Double.valueOf(expr.substring(start1, middle1));
+            if (result1 != null)
+                x1 = result1;
+            final Double result2 = Double.valueOf(expr.substring(middle1 + 1, end1));
+            if (result2 != null) {
+                y1 = result2;
+            }
+            final Double result3 = Double.valueOf(expr.substring(start2, middle2));
+            if (result3 != null) {
+                x2 = result3;
+            }
+            final Double result4 = Double.valueOf(expr.substring(middle2 + 1, end2));
+            if (result4 != null) {
+                y2 = result4;
+            }
         }
-        if (expr.contains(" y1=")) {
-            final Double result = SVGParser.extractDouble(expr, " y1=")[0];
-            if (result != null)
-                y1 = result;
-        }
-        if (expr.contains(" x2=")) {
-            final Double result = SVGParser.extractDouble(expr, " x2=")[0];
-            if (result != null)
-                x2 = result;
-        }
-
-        if (expr.contains(" y2=")) {
-            final Double result = SVGParser.extractDouble(expr, " y2=")[0];
-            if (result != null)
-                y2 = result;
-        }
-
         return false;
     }
     public String toString(){

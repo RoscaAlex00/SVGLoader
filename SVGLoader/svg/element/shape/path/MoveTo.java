@@ -22,17 +22,18 @@ public class MoveTo extends PathOp {
     }
 
     public boolean load(String expr) {
-        if (expr.contains(" d=")) {
-            final Double result = SVGParser.extractDouble(expr, "M")[0];
+        if (expr.contains("M")) {
+            int start = expr.indexOf("M") + 1;
+            int end = expr.substring(start).indexOf(" ")+start;
+            int middle = expr.substring(start, end).indexOf(",")+start;
+            final Double result = Double.valueOf(expr.substring(start, middle));
             if (result != null)
                 x = result;
-        }
-        if (expr.contains(" y=")) {
-            final Double result = SVGParser.extractDouble(expr, " y=")[0];
-            if (result != null)
+            final Double result1 = Double.valueOf(expr.substring(middle + 1, end));
+            if (result1 != null) {
                 y = result;
+            }
         }
-
         return false;
     }
     public String toString(){
