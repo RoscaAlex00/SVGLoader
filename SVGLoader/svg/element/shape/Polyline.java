@@ -24,7 +24,7 @@ public class Polyline extends Shapes {
         if (expr.contains(" points=")) {
             final Double[] result = SVGParser.extractDouble(expr, " points=");
             if (result != null)
-                for (int i = 0; i < result.length/2; i+=2) {
+                for (int i = 0; i < result.length-1; i++) {
                     polyline.add(new Point2D(result[i].doubleValue(),result[i+1].doubleValue())) ;
                 }
         }

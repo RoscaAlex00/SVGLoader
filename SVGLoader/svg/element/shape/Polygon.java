@@ -24,7 +24,7 @@ public class Polygon extends Polyline {
         if (expr.contains(" points=")) {
             final Double[] result = SVGParser.extractDouble(expr, " points=");
             if (result != null)
-                for (int i = 0; i < result.length/2; i+=2) {
+                for (int i = 0; i < result.length-1; i++) {
                     polygon.add(new Point2D(result[i].doubleValue(),result[i+1].doubleValue())) ;
                 }
         }
