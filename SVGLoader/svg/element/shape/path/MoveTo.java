@@ -31,7 +31,7 @@ public class MoveTo extends PathOp {
                 x = result;
             final Double result1 = Double.valueOf(expr.substring(middle + 1, end));
             if (result1 != null) {
-                y = result;
+                y = result1;
             }
         }
         return false;
