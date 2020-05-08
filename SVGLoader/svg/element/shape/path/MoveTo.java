@@ -9,7 +9,7 @@ public class MoveTo extends PathOp {
     private double x;
     private double y;
 
-    protected String label = "MoveTo";
+    protected String label = "M";
     protected boolean absolute;
 
     public MoveTo(String label) {
@@ -22,8 +22,8 @@ public class MoveTo extends PathOp {
     }
 
     public boolean load(String expr) {
-        if (expr.contains(" x=")) {
-            final Double result = SVGParser.extractDouble(expr, " x=")[0];
+        if (expr.contains(" d=")) {
+            final Double result = SVGParser.extractDouble(expr, "M")[0];
             if (result != null)
                 x = result;
         }
@@ -34,5 +34,8 @@ public class MoveTo extends PathOp {
         }
 
         return false;
+    }
+    public String toString(){
+        return label + ": [ x =" + x + ", y=" + y +" ]";
     }
 }

@@ -3,7 +3,7 @@ package svg.element.shape.path;
 import svg.element.Element;
 
 public class Close extends PathOp {
-    protected String label = "Close";
+    protected String label = "Z";
     protected boolean absolute;
 
     public Close(String label) {
@@ -18,5 +18,8 @@ public class Close extends PathOp {
     @Override
     public boolean load(String expr) {
         return false;
+    }
+    public String toString(){
+        return "[Z]";
     }
 }

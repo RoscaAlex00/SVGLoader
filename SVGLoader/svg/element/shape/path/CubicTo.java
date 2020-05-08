@@ -11,7 +11,7 @@ public class CubicTo extends PathOp {
     private double x3;
     private double y3;
 
-    protected String label = "CubicTo";
+    protected String label = "C";
     protected boolean absolute;
 
     public CubicTo(String label) {
@@ -58,5 +58,8 @@ public class CubicTo extends PathOp {
                 y3 = result;
         }
         return true;
+    }
+    public String toString(){
+        return label + ": [ x1 =" + x1 + ", y1=" + y1 + ", x2=" + x2 + ", y2 =" + y2 + ", x3 =" + x3 + ", y3 =" +y3+ " ]";
     }
 }

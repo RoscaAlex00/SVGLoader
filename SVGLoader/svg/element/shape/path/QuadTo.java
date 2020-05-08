@@ -10,7 +10,7 @@ public class QuadTo extends PathOp {
     private double x2;
     private double y2;
 
-    protected String label = "QuadTo";
+    protected String label = "Q";
     protected boolean absolute;
 
     public QuadTo(String label) {
@@ -47,4 +47,8 @@ public class QuadTo extends PathOp {
 
         return false;
     }
+    public String toString(){
+        return label + ": [ x1 =" + x1 + ", y1=" + y1 + ", x2=" + x2 + ", y2 =" + y2 + " ]";
+    }
+
 }

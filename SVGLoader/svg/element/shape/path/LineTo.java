@@ -33,4 +33,7 @@ public class LineTo extends PathOp {
 
         return false;
     }
+    public String toString(){
+        return label + ": [ x1 =" + x1 + ", y1=" + y1 + "]";
+    }
 }
