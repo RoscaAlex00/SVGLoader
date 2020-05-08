@@ -6,8 +6,7 @@ import svg.element.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Polygon extends Shapes {
-
+public class Polygon extends Polyline {
     private final String label = "polygon";
     private final List<Point2D> polygon = new ArrayList<>();
 

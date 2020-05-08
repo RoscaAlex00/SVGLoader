@@ -48,4 +48,7 @@ public abstract class BaseElement implements Element
 
 	//-------------------------------------------------------------------------
 
+	public ElementFactory elementFactory() {
+		return new ElementFactory();
+	}
 }
